@@ -112,7 +112,7 @@ document.getElementById('searchButton').addEventListener('click', searchSong);
 
 function searchSong() {
   const searchTerm = document.getElementById('searchInput').value;
-  const apiUrl = `https://v1.nocodeapi.com/youtoob/spotify/VzKUxSDpJlNmJUYx?q=${searchTerm}&type=track`;
+  const apiUrl = `https://v1.nocodeapi.com/youtoob/spotify/VzKUxSDpJlNmJUYx/browse/categories${searchTerm}&type=track`;
 
   fetch(apiUrl)
     .then(response => response.json())
