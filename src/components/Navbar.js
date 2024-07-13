@@ -15,7 +15,7 @@ const Navbar = ({ keyword, handleKeyPress, setKeyword, fetchMusicData }) => {
       <nav className="navbar navbar-green navbar-expand-lg bg-dark sticky-top">
         <div className="container-fluid">
           <Link className="navbar-brand fs-8 fw-bold text-success" to="/">
-          <img src="final-image.jpg" alt ="Streamify By Shrestha" className="me-2"/> Streamify By  Shrestha
+          <img src="final-image.jpg" alt ="Streamify By Shrestha" className="me-2"/> Streamify
           </Link>
           <div>
             <button
