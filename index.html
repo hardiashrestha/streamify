@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Streamify By Shrestha - Your favourite music is here</title>
-        <link rel="stylesheet" href="style.css">
-        </head>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Streamify By Shrestha - Your favourite music is here</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 <body>
     <nav>
         <ul>
@@ -25,60 +25,13 @@
             <h1>Groove to Your Favorite Beats</h1>
             <h2>Created by: Shrestha Hardia</h2>
             <div class="songItemContainer">
-                <div class="songItem">
-                    <img alt="1">
-                    <span class="songName">Winning Speech -  Karan Aujla</span>
-                    <span class="songlistplay"><span class="timestamp">03:57<i id="0" class="far songItemPlay fa-play-circle"></i> </span></span>
-                </div>
-                <div class="songItem">
-                    <img alt="1">
-                    <span class="songName">Bachke Bachke - Karan Aujla (Unplugged)</span>
-                    <span class="songlistplay"><span class="timestamp">02:57 <i id="1" class="far songItemPlay fa-play-circle"></i> </span></span>
-                </div>
-                <div class="songItem">
-                    <img alt="1">
-                    <span class="songName">52 Bars - Karan Aujla</span>
-                    <span class="songlistplay"><span class="timestamp">03:42 <i id="2" class="far songItemPlay fa-play-circle"></i> </span></span>
-                </div>
-                <div class="songItem">
-                    <img alt="1">
-                    <span class="songName">No Loss - Kr$na</span>
-                    <span class="songlistplay"><span class="timestamp">03:21 <i id="3" class="far songItemPlay fa-play-circle"></i> </span></span>
-                </div>
-                <div class="songItem">
-                    <img alt="1">
-                    <span class="songName">I Guess - Kr$na</span>
-                    <span class="songlistplay"><span class="timestamp">03:06 <i id="4" class="far songItemPlay fa-play-circle"></i> </span></span>
-                </div>
-                <div class="songItem">
-                    <img alt="1">
-                    <span class="songName">Dusk till Dawn - Zayn & Sia</span>
-                    <span class="songlistplay"><span class="timestamp">03:56 <i id="5" class="far songItemPlay fa-play-circle"></i> </span></span>
-                </div>
-                <div class="songItem">
-                    <img alt="1">
-                    <span class="songName">Bilionera - Otilia</span>
-                    <span class="songlistplay"><span class="timestamp">03:06 <i id="6" class="far songItemPlay fa-play-circle"></i> </span></span>
-                </div>
-                <div class="songItem">
-                    <img alt="1">
-                    <span class="songName">Willow Tree - NCS</span>
-                    <span class="songlistplay"><span class="timestamp">03:08 <i id="7" class="far songItemPlay fa-play-circle"></i> </span></span>
-                </div>
-                <div class="songItem">
-                    <img alt="1">
-                    <span class="songName">Soni Soni - Darshan Raval</span>
-                    <span class="songlistplay"><span class="timestamp">03:14 <i id="8" class="far songItemPlay fa-play-circle"></i> </span></span>
-                </div>
-                <div class="songItem">
-                    <img alt="1">
-                    <span class="songName">You and Me</span>
-                    <span class="songlistplay"><span class="timestamp">02:51 <i id="9" class="far songItemPlay fa-play-circle"></i> </span></span>
-                </div>
+                <!-- Song list items -->
             </div>
         </div>
         <div class="songBanner"></div>
     </div>
+
+    <div id="searchResults"></div>
 
     <div class="bottom">
         <input type="range" name="range" id="myProgressBar" min="0" value="0" max="100">
@@ -86,7 +39,7 @@
             <!-- fontawesome icons -->
             <i class="fas fa-3x fa-step-backward" id="previous"></i>
             <i class="far fa-3x fa-play-circle" id="masterPlay"></i>
-            <i class="fas fa-3x fa-step-forward" id="next"></i> 
+            <i class="fas fa-3x fa-step-forward" id="next"></i>
         </div>
         <div class="songInfo">
             <img src="playing.gif" width="42px" alt="" id="gif"> <span id="masterSongName">Winning Speech- Karan Aujla</span>
