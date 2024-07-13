@@ -26,7 +26,6 @@ songItems.forEach((element, i)=>{
     element.getElementsByTagName("img")[0].src = songs[i].coverPath; 
     element.getElementsByClassName("songName")[0].innerText = songs[i].songName; 
 })
- 
 
 // Handle play/pause click
 masterPlay.addEventListener('click', ()=>{
@@ -43,6 +42,7 @@ masterPlay.addEventListener('click', ()=>{
         gif.style.opacity = 0;
     }
 })
+
 // Listen to Events
 audioElement.addEventListener('timeupdate', ()=>{ 
     // Update Seekbar
@@ -90,7 +90,6 @@ document.getElementById('next').addEventListener('click', ()=>{
     audioElement.play();
     masterPlay.classList.remove('fa-play-circle');
     masterPlay.classList.add('fa-pause-circle');
-
 })
 
 document.getElementById('previous').addEventListener('click', ()=>{
@@ -107,3 +106,63 @@ document.getElementById('previous').addEventListener('click', ()=>{
     masterPlay.classList.remove('fa-play-circle');
     masterPlay.classList.add('fa-pause-circle');
 })
+
+// Spotify API integration
+document.getElementById('searchButton').addEventListener('click', searchSong);
+
+function searchSong() {
+  const searchTerm = document.getElementById('searchInput').value;
+  const apiUrl = `https://v1.nocodeapi.com/youtoob/spotify/VzKUxSDpJlNmJUYx?q=${searchTerm}&type=track`;
+
+  fetch(apiUrl)
+    .then(response => response.json())
+    .then(data => {
+      // Clear previous search results
+      document.getElementById('searchResults').innerHTML = '';
+
+      // Loop through the search results and create HTML elements
+      data.tracks.items.forEach(track => {
+        const trackElement = document.createElement('div');
+        trackElement.classList.add('searchResult');
+
+        const coverElement = document.createElement('img');
+        coverElement.src = track.album.images[0].url;
+        coverElement.alt = 'Album Cover';
+
+        const titleElement = document.createElement('h3');
+        titleElement.textContent = track.name;
+
+        const artistElement = document.createElement('p');
+        artistElement.textContent = track.artists[0].name;
+
+        const durationElement = document.createElement('p');
+        durationElement.textContent = formatDuration(track.duration_ms);
+
+        const playButton = document.createElement('button');
+        playButton.textContent = 'Play';
+        playButton.addEventListener('click', () => playSong(track.preview_url));
+
+        trackElement.appendChild(coverElement);
+        trackElement.appendChild(titleElement);
+        trackElement.appendChild(artistElement);
+        trackElement.appendChild(durationElement);
+        trackElement.appendChild(playButton);
+
+        document.getElementById('searchResults').appendChild(trackElement);
+      });
+    })
+    .catch(error => console.error(error));
+}
+
+function formatDuration(durationMs) {
+  const minutes = Math.floor(durationMs / 60000);
+  const seconds = ((durationMs % 60000) / 1000).toFixed(0);
+  return `${minutes}:${seconds.padStart(2, '0')}`;
+}
+
+function playSong(previewUrl) {
+  audioElement.src = previewUrl;
+  audioElement.play();
+  masterPlay.classList.remove('fa-play-circle');
+  masterPlay.classList.add('fa-pause-circle');
+}
