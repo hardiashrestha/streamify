@@ -146,19 +146,10 @@ function App() {
           <div className="col-12 py-5 text-center">
             <h1>
               <i className="bi bi-music-note-list mx-3"></i>
-              v-music
+              Streamify
             </h1>
-            <h3 className="py-5">Discover music in 30 seconds</h3>
-            <div>
-              <a
-                target="_blank"
-                rel="noreferrer"
-                className="btn btn-outline-dark"
-                href="https://github.com/Vishesh-Pandey/v-music"
-              >
-                <i className="bi bi-github mx-2"></i>Github
-              </a>
-            </div>
+            <h3 className="py-5">Your Ultimate Hub For Music Streaming</h3>
+            <h4 className="py-5">Made By: Shrestha Hardia</h4>
           </div>
         </div>
       </div>

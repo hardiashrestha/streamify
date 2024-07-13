@@ -12,17 +12,17 @@ const Navbar = ({ keyword, handleKeyPress, setKeyword, fetchMusicData }) => {
   const setResultOffset = musicContext.setResultOffset;
   return (
     <>
-      <nav className="navbar navbar-dark navbar-expand-lg bg-dark sticky-top">
+      <nav className="navbar navbar-green navbar-expand-lg bg-dark sticky-top">
         <div className="container-fluid">
-          <Link className="navbar-brand" to="/">
-            <i className="bi bi-music-note-list mx-3"></i> v-music
+          <Link className="navbar-brand fs-8 fw-bold text-success" to="/">
+          <img src="logo.png" alt ="Streamify By Shrestha" className="me-2"/> Streamify By  Shrestha
           </Link>
           <div>
             <button
               type="button"
               data-bs-toggle="modal"
               data-bs-target="#exampleModal"
-              className="btn btn-secondary btn-sm mx-1"
+              className="btn btn-outline-success btn-sm mx-1"
             >
               <i className="bi bi-pin-angle-fill"></i> {pinnedMusic.length}
             </button>
