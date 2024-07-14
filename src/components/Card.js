@@ -1,5 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import { MusicContext } from "../Context";
+import { FacebookShareButton, TwitterShareButton, WhatsappShareButton, EmailShareButton } from 'react-share';
+import { FacebookIcon, TwitterIcon, WhatsappIcon, EmailIcon } from 'react-share';
 
 function Card({ element }) {
   const musicContext = useContext(MusicContext);
@@ -47,6 +49,9 @@ function Card({ element }) {
     setlikedMusic(localLikedMusic);
   }, [setlikedMusic]);
 
+  const shareUrl = `https://your-site.com/track/${element.id}`;
+  const title = element.name;
+
   return (
     <div key={element.id} className="col-lg-3 col-md-6 py-2">
       <div className="card">
@@ -86,7 +91,7 @@ function Card({ element }) {
                   <i className="bi bi-heart"></i>
                 </button>
               )}
-              {/* 
+
               <div className="dropdown mx-1">
                 <button
                   className="btn btn-secondary dropdown-toggle"
@@ -121,7 +126,7 @@ function Card({ element }) {
                     </button>
                   </li>
                 </ul>
-              </div> */}
+              </div>
             </div>
           </h5>
           <p className="card-text">Artist: {element.album.artists[0].name}</p>
@@ -129,6 +134,22 @@ function Card({ element }) {
             Release date: {element.album.release_date}
           </p>
           <audio src={element.preview_url} controls className="w-100"></audio>
+
+          <div className="social-share-buttons">
+            <span className="me-2">Share:</span>
+            <FacebookShareButton url={shareUrl} quote={title}>
+              <FacebookIcon size={32} round />
+            </FacebookShareButton>
+            <TwitterShareButton url={shareUrl} title={title}>
+              <TwitterIcon size={32} round />
+            </TwitterShareButton>
+            <WhatsappShareButton url={shareUrl} title={title}>
+              <WhatsappIcon size={32} round />
+            </WhatsappShareButton>
+            <EmailShareButton url={shareUrl} subject={title}>
+              <EmailIcon size={32} round />
+            </EmailShareButton>
+          </div>
         </div>
       </div>
     </div>
