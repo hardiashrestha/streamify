@@ -6,6 +6,7 @@ import { initializePlaylist } from "./initialize";
 import Navbar from "./components/Navbar";
 import { MusicContext } from "./Context";
 import { SpeedInsights } from "@vercel/speed-insights/react"
+import { Analytics } from "@vercel/analytics/react"
 function App() {
   const [keyword, setKeyword] = useState("");
   const [message, setMessage] = useState("");
