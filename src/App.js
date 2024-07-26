@@ -59,7 +59,7 @@ function App() {
   useEffect(() => {
     initializePlaylist();
 
-    // current client credentials will be deleted in few days
+    
     const fetchToken = async () => {
       try {
         const response = await fetch("https://accounts.spotify.com/api/token", {
