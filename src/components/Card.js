@@ -137,16 +137,16 @@ function Card({ element }) {
 
           <div className="social-share-buttons">
             <span className="me-2">Share:</span>
-            <FacebookShareButton url={`https://streamify2test.vercel.app/track/${element.id}`} quote={title}>
+            <FacebookShareButton url={`https://streamifybyshrestha.vercel.app/track/${element.id}`} quote={title}>
               <FacebookIcon size={32} round />
             </FacebookShareButton>
-            <TwitterShareButton url={`https://streamify2test.vercel.app/track/${element.id}`} title={title}>
+            <TwitterShareButton url={`https://streamifybyshrestha.vercel.app/track/${element.id}`} title={title}>
               <TwitterIcon size={32} round />
             </TwitterShareButton>
-            <WhatsappShareButton url={`https://streamify2test.vercel.app/track/${element.id}`} title={title}>
+            <WhatsappShareButton url={`https://streamifybyshrestha.vercel.app/track/${element.id}`} title={title}>
               <WhatsappIcon size={32} round />
             </WhatsappShareButton>
-            <EmailShareButton url={`https://streamify2test.vercel.app/track/${element.id}`} subject={title}>
+            <EmailShareButton url={`https://streamifybyshrestha.vercel.app/track/${element.id}`} subject={title}>
               <EmailIcon size={32} round />
             </EmailShareButton>
           </div>
